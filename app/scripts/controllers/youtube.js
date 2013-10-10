@@ -26,6 +26,12 @@ angular.module('ngExamplesApp')
     });
 
 
-    $scope.$watch('videos', function () { console.log('videos', $scope.videos)})
+    $scope.$watch('query', function (newVal, oldVal) {
+      if (newVal !== oldVal) {
+        $scope.videos = Youtube.search($scope.query); 
+      }
+    });
+
+    
 
   });

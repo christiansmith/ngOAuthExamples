@@ -7,8 +7,8 @@
     "es5-shim": "~2.0.8",
     "angular-unstable": "~1.1.5",
     "angular-mocks-unstable": "~1.1.5",
-    "ngDropbox": "git@github.com:christiansmith/ngDropbox.git",
-    "ngGAPI": "git@github.com:christiansmith/ngGAPI.git"
+    "ngDropbox": "https://github.com/christiansmith/ngDropbox.git",
+    "ngGAPI": "https://github.com/christiansmith/ngGAPI.git"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",
