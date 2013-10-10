@@ -1,0 +1,23 @@
+<h3>Youtube</h3>
+
+  
+<form class="form-search form-inline">
+  <select ng-model="playlist" 
+          ng-options="value as key for (key,value) in playlists"></select>
+
+
+  <input type="text" 
+         class="input-xlarge search-query pull-right" 
+         ng-model="query" 
+         placeholder="Search Youtube">
+
+</form>
+
+<hr>
+<ul class="thumbnails">
+  <li ng-repeat="item in videos.items">
+    <a href="/uploads/watch/{{item.snippet.resourceId.videoId || item.id.videoId}}" class="thumbnail">
+      <img ng-src="{{item.snippet.thumbnails.default.url}}" width="120" height="90">
+    </a>
+  </li>
+</ul>
