@@ -3,8 +3,9 @@
 angular.module('ngExamplesApp')
 
 
-  .controller('YoutubeCtrl', function ($scope, Youtube) {
+  .controller('YoutubeCtrl', function ($scope, Youtube, debounce) {
 
+    Youtube.search = debounce(Youtube.search, 500, false);
 
     Youtube.listChannels({ 
       part: 'contentDetails', 
@@ -24,6 +25,7 @@ angular.module('ngExamplesApp')
         });
       }
     });
+
 
 
     $scope.$watch('query', function (newVal, oldVal) {
