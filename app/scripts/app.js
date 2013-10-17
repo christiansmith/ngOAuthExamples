@@ -6,6 +6,7 @@ angular.module('ngExamplesApp', ['gapi'])
     apiKey: 'AIzaSyCCDMOrj_WURNcInIneJuy0oTI_pqtoNhE',
     clientId: '541781515171.apps.googleusercontent.com',
     scopes: [
+      'https://www.googleapis.com/auth/drive',
       'https://www.googleapis.com/auth/youtube',
       'https://www.googleapis.com/auth/userinfo.profile'
     ]  
@@ -19,11 +20,15 @@ angular.module('ngExamplesApp', ['gapi'])
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: function(){}
       })
       .when('/youtube', {
         templateUrl: 'views/youtube.html',
         controller: 'YoutubeCtrl'
+      })
+      .when('/drive', {
+        templateUrl: 'views/drive.html',
+        controller: 'DriveCtrl'
       })
       .otherwise({
         redirectTo: '/'

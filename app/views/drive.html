@@ -1,0 +1,35 @@
+<!--<pre >{{list |json }}</pre>-->
+<div class="drive panel panel-default">
+  <div class="drive-header panel-heading">
+    <div class="row">
+      <div class="col-lg-8">
+        <h3 style="margin-top: 0;margin-bottom: 0;">Drive Files For {{list.items[0].ownerNames.join(',')}}</h3>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-inline">
+          <label for="drive-file-filter">Search Files: </label>
+          <input type="text" placeholder="Enter file filter" class="form-control" id="drive-file-filter" ng-model="filterText" />
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="drive-body row">
+  <div class="drive-rail col-lg-4">
+    <menu>
+      <ul>
+        <!-- Create list items for each folder or file in your Google Drive -->
+        <li style="cursor: pointer; list-style-image: url({{file.iconLink}});" ng-repeat="file in list.items | filter:filterText">
+          <h6>{{file.title}}</h6>
+        </li>
+      </ul>
+    </menu>
+  </div>
+  <div class="drive-preview col-lg-8">
+    <h3>JSON Response for 'Drive.listFiles()'</h3>
+    <div class="">
+      <pre class="code-sample">
+        <code>{{list.items | json}}</code>
+      </pre>
+    </div>
+  </div>
+</div>
