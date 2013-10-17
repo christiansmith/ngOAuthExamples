@@ -6,6 +6,7 @@
     "json3": "~3.2.4",
     "es5-shim": "~2.0.8",
     "angular-unstable": "~1.1.5",
+    "bootstrap" : "~3.0.0",
     "angular-mocks-unstable": "~1.1.5",
     "ngDropbox": "https://github.com/christiansmith/ngDropbox.git",
     "ngGAPI": "https://github.com/christiansmith/ngGAPI.git"
