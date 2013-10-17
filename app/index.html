@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" >
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -25,16 +25,21 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <div>
-      <ul>
+    <div ng-controller="MainCtrl" class="navbar navbar-inverse">
+      <ul class="nav navbar-nav">
         <li><a href="/youtube">Youtube</a></li>
+        <li><a href="/drive">Drive</a></li>
       </ul>
+      <form class="navbar-form navbar-left" role="authorize">
+        <button type="button" class="btn btn-primary" ng-click="authorize()">Connect to GAPI</button>
+      </form>
     </div>
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
 
     <script src="https://apis.google.com/js/api.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-unstable/angular.js"></script>
     <script src="bower_components/ngGAPI/gapi.js"></script>
     <script src="bower_components/ngDropbox/dropbox.js"></script>
@@ -43,6 +48,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/youtube.js"></script>
+    <script src="scripts/controllers/drive.js"></script>
     <!-- endbuild -->
 </body>
 </html>
