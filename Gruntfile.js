@@ -24,6 +24,17 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  var notFound = function (req, res) {
+    var fs = require('fs')
+      , path = require('path')
+
+    fs.readFile(path.join(yeomanConfig.app, 'index.html'), function (err, body) {
+      res.statusCode = 200;
+      res.setHeader('Content-Length', body.length);
+      res.end(body);                   
+    });
+  }
+
   try {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
   } catch (e) {}
@@ -78,7 +89,8 @@ module.exports = function (grunt) {
             return [
               lrSnippet,
               mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+              mountFolder(connect, yeomanConfig.app),
+              notFound
             ];
           }
         }
