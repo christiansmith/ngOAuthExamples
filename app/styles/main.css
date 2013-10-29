@@ -20,3 +20,16 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
