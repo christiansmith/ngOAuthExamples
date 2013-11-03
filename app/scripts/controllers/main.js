@@ -9,4 +9,8 @@ angular.module('ngExamplesApp')
       GAPI.init(); 
     }
 
+    $scope.disableHref = function($event){
+      $event.preventDefault();
+    }
+
   });

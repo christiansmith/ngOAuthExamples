@@ -12,7 +12,8 @@
         </form>
       </div>
       <div class="col-lg-8">
-        <h3 style="margin-top: 8px;" class="pull-right no-margin">Drive Files For {{list.items[0].ownerNames[0]}}</h3>
+        <h3 class="pull-right no-margin drive-header">ngGAPI JSON Response for 'Drive.listFiles()'
+         </h3>
       </div>
     </div>
   </div>
@@ -28,9 +29,8 @@
     </menu>
   </div>
   <div class="drive-preview col-lg-9">
-    <h3>JSON Response for 'Drive.listFiles()'</h3>
       <pre class="row code-sample">
-        <code>{{list.items | json}}</code>
+        <code ng-repeat="resp in list.items | filter:filterText">{{resp | json}}</code>
       </pre>
   </div>
 </div>
