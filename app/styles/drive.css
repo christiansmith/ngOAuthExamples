@@ -1,3 +1,10 @@
 .drive-file-list{
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
   padding-left: 10px;
+}
+
+.drive-header {
+  margin-top: 8px;
 }
